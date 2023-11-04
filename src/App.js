@@ -1,18 +1,20 @@
-import './App.css';
-import Herosection2 from './component/herosecction2';
-import Herosection from './component/herosection';
-import Navbar from './component/navbar';
-import Reviews from './component/reviews';
-import Footer from './component/footer';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./component/home";
+import Qoutes from "./component/qoutes"
+import quotesData from "./assets/quote.json"
+
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Herosection/>
-      <Herosection2/>
-      <Reviews/>
-      <Footer/>
-    </div>
+   <BrowserRouter>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/qoutes"
+         element={<Qoutes quotes={quotesData.quotes}/> } />
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 
